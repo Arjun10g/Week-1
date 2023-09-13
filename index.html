@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week 1 Tutorial</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+    <script>
+        MathJax.Hub.Config({
+            extensions: ["tex2jax.js"],
+            jax: ["input/TeX", "output/HTML-CSS"],
+            tex2jax: {
+                inlineMath: [['\\(', '\\)']],
+                displayMath: [['\\[', '\\]']],
+                processEscapes: true
+            },
+            "HTML-CSS": { scale: 90 },
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js" integrity="sha512-AMl4wfwAmDM1lsQvVBBRHYENn1FR8cfOTpt8QVbb/P55mYOdahHD4LmHM1W55pNe3j/3od8ELzPf/8eNkkjISQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Observer.min.js" integrity="sha512-7xTD1meeGGoAzwZKA0Z8YelV3qAvRltuwACWXpnxtneF7VAMztOTAi3t4laVSaE4Znq4LMPeGUIYWEvKEk5r3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/Draggable.min.js" integrity="sha512-S6SXKUZ11xkCoD/UuhdXG4B4iiCXng+xW2KCx0lgfQqmdqtjqGgm4WChdYIhO1F/CmH21vnkSUvPEgXNgDwkjg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js" defer></script>
+</head>
+<body>
+    <div class="intro">
+        <h1>An Introduction to Frequency Distributions</h1>
+        <h1>By Arjun</h1>
+    </div>
+
+    <div class="content">
+        <div class="text">
+            <h2>Data Types</h2>
+            <ol>
+                <li><b>Discrete data</b> take on distinct, separate values and often represent counts or whole numbers.</li>
+                <ul>
+                    <li><b>Nominal data</b> represent categories or labels with no inherent order or ranking.</li>
+                    <li><b>Ordinal data</b> represent categories with a meaningful order or ranking but with uneven intervals between them.</li>
+                </ul> 
+                <li><b>Continuous data</b> can take on any value within a given range and are not restricted to specific intervals.</li>
+                <ul>
+                    <li><b>Interval data</b> represent values with a meaningful order and equal intervals between them, but they lack a true zero point.</li>
+                    <li><b>Ratio data</b> represent values with a meaningful order, equal intervals, and a true zero point, where zero indicates the absence of the quantity.</li>
+                </ul>
+            </ol>
+        </div>
+        <div class="images">
+            <img src="https://images.slideplayer.com/18/6095709/slides/slide_3.jpg" alt="" class="remove">
+            <img src="noir.jpeg" alt="" class="replace">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="text">
+            <h2>Frequency Distributions</h2>
+            <p>A frequency distribution is a tabular representation of data that displays the number of times each distinct value or category appears in a dataset. It offers a clear overview of the data's distribution, allowing statisticians and analysts to identify patterns, central tendencies, and variations.</p>
+            <p>Think of a frequency distribution as a data table that tells you how many times different things show up in a set of data. It's like a quick snapshot of your data that helps you see which stuff is super common, what's not so common, and everything in between. This handy table helps experts (and even non-experts) spot trends, figure out what's typical, and understand how spread out the data is. <b>Example</b></p>
+            <table>
+                <tr>
+                  <th>IQ Score</th>
+                  <th>Frequency</th>
+                </tr>
+                <tr>
+                  <td>85</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <td>86</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>87</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>88</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>89</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>90</td>
+                  <td>2</td>
+                </tr>
+                <tr>
+                  <td>91</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>92</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>93</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>94</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>95</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>96</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>97</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td>98</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>99</td>
+                  <td>0</td>
+                </tr>
+                <tr>
+                  <td>100</td>
+                  <td>12</td>
+                </tr>
+                <!-- Continue this pattern for the entire range of IQ scores -->
+              </table>
+              
+              
+        </div>
+        <div class="images">
+            <img src="freq.jpeg" alt="" class="remove">
+            <img src="plot_hist.jpeg" alt="" class="replace">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="text">
+            <h2>Grouped Frequency Distributions</h2>
+            <p>In cases where the dataset contains a wide range of values, it may be impractical to list each individual value in the frequency distribution. This is where grouped frequency distributions come into play. Grouping data into intervals or classes makes it more manageable while still providing valuable insights.</p>
+            <p>Let's extend our IQ example to a larger dataset with more varied scores. Instead of listing each individual score, we can group them into intervals to create a grouped frequency distribution:</p>
+            <table>
+                <tr>
+                  <th>IQ Score</th>
+                  <th>Frequency</th>
+                </tr>
+                <tr>
+                  <td>85 - 90</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>91 - 95</td>
+                  <td>7</td>
+                </tr>
+                <tr>
+                  <td>96 - 100</td>
+                  <td>12</td>
+                </tr>
+                <tr>
+                  <td>101 - 105</td>
+                  <td>9</td>
+                </tr>
+                <tr>
+                  <td>106 - 110</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>111 - 115</td>
+                  <td>4</td>
+                </tr>
+              </table>
+        </div>
+        <div class="images">
+            <img src="group_freq_table.jpeg" alt="" class="remove">
+            <img src="grouped_freq_plot.jpeg" alt="" class="replace">
+        </div>
+    </div>
+
+    <div class="steps">
+        <h2>Steps to creating a Grouped Frequency Distribution</h2>
+        <p><strong>Get the Range:</strong></p>
+        <ul>
+            <li>Calculate the range by finding the difference between the highest and lowest scores in your dataset.</li>
+            <li>\(Range = Highest Score - Lowest Score\)</li>
+        </ul>
+
+        <p><strong>Decide on the number of intervals:</strong></p>
+        <ul>
+            <li>Decide on the number of categories (intervals) you want to use for your grouped frequency distribution. Example, 10 categories may be used.</li>
+            <li>Calculate the width of each interval by dividing the range by the number of intervals. Round up to the nearest whole number.</li>
+            <li>\(Width = Range / Number of Categories\)</li>
+        </ul>
+
+        <p><strong>Round up to the nearest odd number</strong></p>
+        <ul>
+            <li>Round up the width of each interval to the nearest odd number. This will be the interval size.</li>
+            <li>For example, if the width calculation results in 4.5, round it up to 5.</li>
+        </ul>
+
+        <p><strong>Find the lowest score in the dataset</strong></p>
+        <ul>
+            <li>To ensure that all data is captured within the grouped frequency distribution, find the lowest value in your dataset. You'll begin your first interval from this value.</li>
+        </ul>
+
+        <p><strong>Calculate the remaining intervals</strong></p>
+        <ul>
+            <li>Begin constructing the intervals using the calculated width.</li>
+            <li>Start with the lowest value as the lower limit of the first interval.</li>
+            <li>Add the rounded width to the lower limit to determine the upper limit of the first interval.</li>
+            <li>Continue this process until all data points are included in the intervals.</li>
+        </ul>
+
+        <p><strong>Add frequencies</strong></p>
+        <ul>
+            <li>Count the number of data points that fall within each interval and add them to the frequency column.</li>
+        </ul>
+    </div>
+
+    <div class="steps">
+        <h2>Example Time</h2>
+        <p>First step involves, collecting a set of IQ scores from a sample group. For this example, let's assume we have the following raw IQ scores:</p>
+        <p>102, 95, 110, 98, 90, 112, 104, 96, 100, 108, 92, 105, 98, 88, 93, 109, 101, 99, 107, 94</p>
+
+        <p>Next we get the range, Range = Highest Score - Lowest Score</p>
+        <p>Range = 112 - 88 <br>
+            Range = 24</p>
+
+        <p>Divide the range by the desired number of categories or bins. For this example, let's choose 5 categories:</p>
+        <p>Width = Range / Number of Categories <br>
+            Width = 24 / 5 <br>
+            Width = 4.8</p>
+
+        <p>Round up the width to the nearest odd number. This will be the interval size.</p>
+        <p>Interval Size = 5</p>
+
+        <p>Find the lowest score in the dataset. This will be the lower limit of the first interval.</p>
+        <p>Lower Limit = 88</p>
+
+        <p>Calculate the remaining intervals. Start with the lowest value as the lower limit of the first interval. Add the rounded width to the lower limit to determine the upper limit of the first interval. Continue this process until all data points are included in the intervals.</p>
+        <table>
+            <tr>
+                <th>IQ Range</th>
+                <th>Frequency</th>
+            </tr>
+            <tr>
+                <td>88 - 93</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>94 - 99</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>100 - 105</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>106 - 111</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>112 - 117</td>
+                <td>2</td>
+            </tr>
+        </table>
+        
+    </div>
+
+    <button class = 'play'>Play Time</button>
+
+    <div class="frame inactive">
+        <iframe src="https://arjun10.shinyapps.io/Week1/" frameborder="0"></iframe>
+    </div>
+
+    <div class="content">
+        <div class="text">
+            <h2>Frequency Polygons</h2>
+            <p>A frequency polygon is a graphical representation of a frequency distribution. It uses line segments connected to points located directly above class midpoint values to represent the frequency of a class. The frequency polygon is a curve that starts at a class midpoint and ends at the class midpoint of the next class.</p>
+            <p>Histograms are great for displaying the distribution of discrete data or for emphasizing the frequency of values within specific bins. Ultimately, the choice between frequency polygons and histograms should align with your data visualization objectives.</p>
+            <p>Frequency Polynomials offer simpler trend identification and make it easier to visually compare multiple distributions or datasets on the same graph. You can overlay multiple frequency polygons with different line styles or colors, which helps in visualizing relationships and differences between datasets.</p>
+        </div>
+        <div class="images">
+            <img src="p1.jpeg" alt="" class="remove">
+            <img src="p2.jpeg" alt="" class="replace">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="text">
+            <h2>Bar Plots</h2>
+            <p>Bar plots are a great way to visualize data that is classified into nominal or ordinal categories. They are similar to histograms, but they are used for categorical rather than continuous data. Bar plots are also used to compare the amounts or frequency of occurrence of different values of a variable.</p>
+            <p>A barplot is used to display categorical data or compare discrete categories or groups. It represents the frequency or count of each category on the X-axis, while the Y-axis shows the associated numerical value. Each bar in a barplot is distinct, representing different categories or groups. For instance, you can create a barplot to visualize the number of cars sold for various car brands in a given year.</p>
+        </div>
+        <div class="images">
+            <img src="Bar1.jpeg" alt="" class="remove">
+            <img src="Bar2.jpeg" alt="" class="replace">
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="text">
+            <h2>Shapes of Distributions</h2>
+            <p><b>Symmetry</b> A distribution is considered symmetric if it looks the same on both sides of its center point. In other words, if you were to fold a symmetric distribution in half, the two halves would match up. The classic example of a symmetric distribution is the normal distribution, also known as the bell curve.</p>
+            <p><b>Skewness</b> A distribution is considered skewed if it is not symmetric and its shape depends on the direction of the skewness. A distribution is considered positively skewed if the tail on the right side is longer or fatter than the tail on the left side. A distribution is considered negatively skewed if the tail on the left side is longer or fatter than the tail on the right side.</p>
+            <p><b>Kurtosis</b> Kurtosis is a measure of whether the data are heavy-tailed or light-tailed relative to a normal distribution. That is, data sets with high kurtosis tend to have heavy tails, or outliers. Data sets with low kurtosis tend to have light tails, or lack of outliers. A uniform distribution would be the extreme case.</p>
+            <p><b>Modality</b> Modality refers to the number of peaks or modes in a distribution. Distributions can be unimodal (having one peak), bimodal (having two peaks), trimodal (having three peaks), or multimodal (having more than three peaks). Modality provides insights into the underlying structure of the data and can indicate whether there are distinct subpopulations or patterns.</p>
+        </div>
+        <div class="images">
+            <img src="skew.jpeg" alt="" class="remove">
+            <img src="comp.jpeg" alt="" class="replace">
+        </div>
+    </div>
+</body>
+</html>
